@@ -23,7 +23,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/dashboard.css" rel="stylesheet">
-    <link href="css/sidebar.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
   </head>
 
   <body>
@@ -248,11 +248,10 @@
 <script>
   $(document).ready(function() {
     $('#navigation-toggle').on("click", function(e) {
-      $('body').toggleClass('navigation-active');
+      $('body').toggleClass('sidebar-open');
     });
   });
 </script>
-
 
 
 

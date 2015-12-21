@@ -1,0 +1,11 @@
+.navbar-fixed-bottom, .navbar-fixed-top {
+	left: 220px;
+}
+
+@media (min-width: 768px) {
+	.sidebar {
+		top: 0;
+		height: 100vh;
+		z-index: 1031;
+	}
+}
