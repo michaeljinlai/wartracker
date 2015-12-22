@@ -1,22 +1,36 @@
 /*
  * Base structure
  */
-
-/*
- * Global add-ons
- */
-
-.sub-header {
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
+body {
+	background-color: #F3F3F4;
+}
+@media (min-width: 768px) {
+	body {
+		position: relative;
+		margin-left: 220px;
+		padding-top: 0;
+	}
 }
 
 /*
- * Top navigation
- * Hide default border to remove 1px line.
+ * Navbar structure
  */
-.navbar-fixed-top {
-  border: 0;
+body > div.container-fluid > div > nav {
+	background-color: white;
+	border: 0;
+}
+ @media (min-width: 768px) {
+	body > div.container-fluid > div > nav {
+		border-radius: 0;
+	}
+	body > div.container-fluid > div > nav > div > div.navbar-header > a, #navbar > ul > li > a {
+		color: #888;
+	}
+}
+
+.sub-header {
+  	padding-bottom: 10px;
+  	border-bottom: 1px solid #eee;
 }
 
 /*
@@ -25,39 +39,45 @@
 
 /* Hide for mobile, show later */
 .sidebar {
-  display: none;
+  	display: none;
 }
 @media (min-width: 768px) {
-  .sidebar {
-    position: fixed;
-    top: 51px;
-    bottom: 0;
-    left: 0;
-    z-index: 1000;
-    display: block;
-    padding: 20px;
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    background-color: #f5f5f5;
-    border-right: 1px solid #eee;
-  }
+  	.sidebar {
+	    position: fixed;
+	    top: 0;
+	    bottom: 0;
+	    left: 0;
+	    z-index: 1031;
+		display: block;
+	    height: 100vh;
+	    width: 220px;
+	    padding: 20px;
+	    overflow-x: hidden;
+	    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+	    background-color: #2F4050;
+	    border-right: 1px solid #eee;
+  	}
 }
 
 /* Sidebar navigation */
 .nav-sidebar {
-  margin-right: -21px; /* 20px padding + 1px border */
-  margin-bottom: 20px;
-  margin-left: -20px;
+	margin-right: -21px; /* 20px padding + 1px border */
+	margin-bottom: 20px;
+	margin-left: -20px;
 }
 .nav-sidebar > li > a {
-  padding-right: 20px;
-  padding-left: 20px;
+  	padding-right: 20px;
+  	padding-left: 20px;
+  	color: #a7b1c2;
+  	font-weight: 600;
+  	font-size: 13px;
 }
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
-.nav-sidebar > .active > a:focus {
-  color: #fff;
-  background-color: #428bca;
+.nav-sidebar > .active > a:focus,
+.nav-sidebar > li > a:hover {
+  	color: white;
+  	background-color: #293846;
 }
 
 
@@ -66,16 +86,18 @@
  */
 
 .main {
-  padding: 20px;
+  	padding: 20px;
 }
 @media (min-width: 768px) {
-  .main {
-    padding-right: 40px;
-    padding-left: 40px;
-  }
+  	.main {
+    	padding-right: 40px;
+    	padding-left: 40px;
+		margin-left: 0px; 
+		width: 100%;
+  	}
 }
 .main .page-header {
-  margin-top: 0;
+  	margin-top: 0;
 }
 
 
@@ -84,16 +106,16 @@
  */
 
 .placeholders {
-  margin-bottom: 30px;
-  text-align: center;
+  	margin-bottom: 30px;
+  	text-align: center;
 }
 .placeholders h4 {
-  margin-bottom: 0;
+  	margin-bottom: 0;
 }
 .placeholder {
-  margin-bottom: 20px;
+  	margin-bottom: 20px;
 }
 .placeholder img {
-  display: inline-block;
-  border-radius: 50%;
+  	display: inline-block;
+  	border-radius: 50%;
 }
