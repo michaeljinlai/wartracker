@@ -2,14 +2,17 @@
  * Base structure
  */
 body {
-	font-family: "open sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "open sans", "Helvetica Neue", Helvetica,Arial, sans-serif;
 }
 @media (min-width: 768px) {
 	body {
 		position: relative;
-		margin-left: 100px;
+		margin-left: 220px;
 		padding-top: 0;
 	}
+}
+.sidebar-toggle {
+	margin-left: 70px;
 }
 
 /*
@@ -40,7 +43,19 @@ body > div.container-fluid > div > nav {
 
 /* Hide for mobile, show later */
 .sidebar {
-  	display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -9999;
+	display: block;
+    height: 100vh;
+    width: 70px;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+    background-color: #2F4050;
+    border-right: 1px solid #eee;
 }
 @media (min-width: 768px) {
   	.sidebar {
