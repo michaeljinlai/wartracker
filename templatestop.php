@@ -20,10 +20,10 @@
     $('#navigation-toggle').on("click", function(e) {
       $('#sidebar-open').toggleClass('hide');
       $('#sidebar-close').toggleClass('hide');
+      $('body').toggleClass('sidebar-toggle');
     });
   });
 </script>
-
 
 
 

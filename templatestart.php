@@ -79,7 +79,7 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </button>
-	          <a class="btn btn-primary hamburger-btn">
+	          <a class="btn btn-primary hamburger-btn" id="navigation-toggle">
 	          	<i class="fa fa-bars"></i>
 	          </a>
 	        </div>

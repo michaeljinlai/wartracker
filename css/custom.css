@@ -22,18 +22,32 @@ body > div.container-fluid > div > nav {
 	background-color: white;
 	border: 0;
 	margin: 0;
+	border-radius: 0;
 }
- @media (min-width: 768px) {
-	body > div.container-fluid > div > nav {
-		border-radius: 0;
-	}
+body > div.container-fluid > div > nav > div > div.navbar-header > a:active {
+	background-color: #18A689;	
+	border-color: #18A689;
+}
+body > div.container-fluid > div > nav > div > div.navbar-header > a {
+	color: white;
+	background-color: #1ab394;
+	border-color: #1ab394;
+	height: 24px;
+	margin-top: 13px;
+	margin-left: 15px;
+}
+@media (min-width: 768px) {
 	body > div.container-fluid > div > nav > div > div.navbar-header > a {
-		color: white;
-	}
-	#navbar > ul > li > a {
-		color: #888;
+		margin-left: 0;
 	}
 }
+body > div.container-fluid > div > nav > div > div.navbar-header > a > i {
+	vertical-align: top;
+}
+#navbar > ul > li > a {
+	color: #888;
+}
+
 .hamburger-btn {
 	padding: 4px 12px 4px 12px;
 }
@@ -47,7 +61,6 @@ body > div.container-fluid > div > nav {
  * Sidebar
  */
 
-/* Hide for mobile, show later */
 .sidebar {
     position: fixed;
     top: 0;
@@ -61,7 +74,6 @@ body > div.container-fluid > div > nav {
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
     background-color: #2F4050;
-    border-right: 1px solid #eee;
 }
 @media (min-width: 768px) {
   	.sidebar {
@@ -77,7 +89,6 @@ body > div.container-fluid > div > nav {
 	    overflow-x: hidden;
 	    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
 	    background-color: #2F4050;
-	    border-right: 1px solid #eee;
   	}
 }
 
@@ -149,8 +160,11 @@ body > div.container-fluid > div > nav {
  * Others
  */
 
-.btn-primary {
-    /* background-color: #1ab394; */
-    /* border-color: #1ab394; */
-    /* color: #FFF; */
+.btn {
+    border-radius: 3px;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border-color: #2f4050;
 }
