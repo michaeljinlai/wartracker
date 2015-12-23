@@ -27,9 +27,15 @@ body > div.container-fluid > div > nav {
 	body > div.container-fluid > div > nav {
 		border-radius: 0;
 	}
-	body > div.container-fluid > div > nav > div > div.navbar-header > a, #navbar > ul > li > a {
+	body > div.container-fluid > div > nav > div > div.navbar-header > a {
+		color: white;
+	}
+	#navbar > ul > li > a {
 		color: #888;
 	}
+}
+.hamburger-btn {
+	padding: 4px 12px 4px 12px;
 }
 
 .sub-header {
@@ -137,4 +143,14 @@ body > div.container-fluid > div > nav {
 .placeholder img {
   	display: inline-block;
   	border-radius: 50%;
+}
+
+/*
+ * Others
+ */
+
+.btn-primary {
+    /* background-color: #1ab394; */
+    /* border-color: #1ab394; */
+    /* color: #FFF; */
 }
