@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2015 at 02:55 PM
+-- Generation Time: Dec 24, 2015 at 05:43 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -19,6 +19,22 @@ SET time_zone = "+00:00";
 --
 -- Database: `wartracker`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `clan`
+--
+
+CREATE TABLE IF NOT EXISTS `clan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `clan_name` varchar(25) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `clan_tag` varchar(25) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `clan_handle` varchar(25) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -52,6 +68,16 @@ INSERT INTO `users` (`id`, `username`, `password`, `salt`, `privilege`, `email`)
 (7, 'try', 'b0aa8efd47a8bf751e335210add2c6b03f0f20a4617f4c247db7fd4523e5e6ef', '93d429e6f1e1633', 'user', 'try@try.com'),
 (8, 'test', '8db6ece565d098c2c18d69a2690b2fd9d47cdd8f96a4a9df3b4915cdc4575488', '58d06c067f080ef3', 'user', 'test@test.commmm'),
 (9, 'aklsdasjkld', '2c594ed0bed10bdcb4ddd3761edb3d770f9dd1cb96cca53532f6d2c117d41756', '3ccb99073e85ea59', 'user', 'askdj@askjd.com');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `clan`
+--
+ALTER TABLE `clan`
+  ADD CONSTRAINT `user_fk1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
