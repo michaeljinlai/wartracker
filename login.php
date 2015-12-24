@@ -87,12 +87,12 @@
             if($_SESSION['user']['privilege'] === 'administrator') {
 	            // Redirect the user if they are an administrator.  <-- need to add field to users table for administrator 
 	            header("Location: dashboard"); 
-	            die("Redirecting to: clan"); 
+	            die("Redirecting to: dashboard"); 
             }
             else {
 	            // Redirect the user if they are a normal user. 
 	            header("Location: dashboard"); 
-	            die("Redirecting to: clan"); 
+	            die("Redirecting to: dashboard"); 
             }
         } 
         else { 

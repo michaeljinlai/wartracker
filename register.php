@@ -1,7 +1,7 @@
 <?php 
 
     // First we execute our common code to connection to the database and start the session 
-    require($_SERVER['DOCUMENT_ROOT']."/clashofclans/database.php"); 
+    require($_SERVER['DOCUMENT_ROOT']."/wartracker/database.php"); 
      
     // This if statement checks to determine whether the registration form has been submitted 
     // If it has, then the registration code is run, otherwise the form is displayed 
@@ -238,7 +238,7 @@
             } 
 
             // This redirects the user back to the login page after they register 
-            header("Location: redirect.php?class=success&message=Please wait to be redirected&url=login.php"); 
+            header("Location: redirect.php?class=success&message=Please wait to be redirected&url=login"); 
              
             // Calling die or exit after performing a redirect using the header function 
             // is critical.  The rest of your PHP script will continue to execute and 
@@ -261,7 +261,7 @@
             <div class="row">
                 <h3>Register</h3>
             </div>
-            <form id="myform" class="form-horizontal" action="register.php" method="post"> 
+            <form id="myform" class="form-horizontal" action="register" method="post"> 
                 <!-- Username -->
                 <div class="control-group <?php echo !empty($usernameError)?'error':'';?>">
                     <label class="control-label">Username</label>

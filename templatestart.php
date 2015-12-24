@@ -1,7 +1,7 @@
 <?php require($_SERVER['DOCUMENT_ROOT']."/wartracker/database.php"); ?>
 
 <?php 
-    if(empty($_SESSION['user']) || $_SESSION['user']['privilege'] !== 'administrator') 
+    if(empty($_SESSION['user'])) 
     { 
         header("Location: login"); 
         die("Redirecting to login"); 
