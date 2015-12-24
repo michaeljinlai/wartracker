@@ -1,6 +1,5 @@
 <?php 
 
-    // First we execute our common code to connection to the database and start the session 
     require($_SERVER['DOCUMENT_ROOT']."/wartracker/database.php"); 
      
     // This if statement checks to determine whether the registration form has been submitted 
@@ -9,7 +8,6 @@
 
         // Google ReCaptcha
         // https://www.google.com/recaptcha/admin#site/319847548?setup
-        // Honestly I have no idea what this code really does, but it's what makes Google's recaptcha function work
         $secret = "6Ld8fBATAAAAAIWPaXH74AjV0YC7nn60qHB4eCwZ";
         $ip = $_SERVER['REMOTE_ADDR'];
         $captcha = $_POST['g-recaptcha-response'];
@@ -225,17 +223,28 @@
                 ':salt' => $salt, 
                 ':email' => $_POST['email'] 
             ); 
-             
-            try { 
-                // Execute the query to create the user 
-                $stmt = $db->prepare($query); 
-                $result = $stmt->execute($query_params); 
-            } 
-            catch(PDOException $ex) { 
-                // Note: On a production website, you should not output $ex->getMessage(). 
-                // It may provide an attacker with helpful information about your code.  
-                die("Failed to run query: " . $ex->getMessage()); 
-            } 
+
+            // Execute the query to create the user 
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params); 
+
+            $user_id = $db->lastInsertId();
+
+            $query = " 
+                INSERT INTO clan ( 
+                    user_id
+                ) VALUES ( 
+                    :user_id
+                ) 
+            "; 
+
+            $query_params = array( 
+                ':user_id' => $user_id
+            ); 
+
+            // Execute the query to create the user 
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params); 
 
             // This redirects the user back to the login page after they register 
             header("Location: redirect.php?class=success&message=Please wait to be redirected&url=login"); 
