@@ -6,6 +6,14 @@
         header("Location: login"); 
         die("Redirecting to login"); 
     } 
+
+	function locationChecker($location) {
+		preg_match("/[^\/]+$/", $_SERVER['REQUEST_URI'], $matches);
+		$last_word = $matches[0];
+		if ($location === $last_word) {
+			echo 'active';
+		}	
+	}
 ?>
 
 <!DOCTYPE html>
@@ -37,20 +45,20 @@
 
     <div class="col-sm-3 col-md-2 sidebar" id="sidebar-open">
       <ul class="nav nav-sidebar">
-        <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Reports</a></li>
-        <li><a href="#">Analytics</a></li>
-        <li><a href="#">Export</a></li>
+        <li class="<?php locationChecker('dashboard'); ?>"><a href="dashboard">Dashboard</a></li>
+        <li class="<?php locationChecker('clan'); ?>"><a href="clan">Clan</a></li>
+        <li class="<?php locationChecker('members'); ?>"><a href="members">Members</a></li>
+        <li class="<?php locationChecker('wars'); ?>"><a href="wars">Wars</a></li>
         <li><a href="logout">Logout</a></li>
       </ul>
     </div>
 
     <div class="col-sm-3 col-md-2 sidebar hide" id="sidebar-close">
       <ul class="nav nav-sidebar">
-        <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Reports</a></li>
-        <li><a href="#">Analytics</a></li>
-        <li><a href="#">Export</a></li>
+        <li class="<?php locationChecker('dashboard'); ?>"><a href="dashboard">Dashboard</a></li>
+        <li class="<?php locationChecker('clan'); ?>"><a href="clan">Clan</a></li>
+        <li class="<?php locationChecker('members'); ?>"><a href="members">Members</a></li>
+        <li class="<?php locationChecker('wars'); ?>"><a href="wars">Wars</a></li>
         <li><a href="logout">Logout</a></li>
       </ul>
     </div>
@@ -67,7 +75,10 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	          </button>
-	          <a class="btn btn-primary hamburger-btn" id="navigation-toggle">
+	          <a class="btn btn-primary hamburger-btn" id="hamburger-open">
+	          	<i class="fa fa-bars"></i>
+	          </a>
+	          <a class="btn btn-primary hamburger-btn hide" id="hamburger-close">
 	          	<i class="fa fa-bars"></i>
 	          </a>
 	        </div>

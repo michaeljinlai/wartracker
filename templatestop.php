@@ -16,13 +16,43 @@
 
 <!-- Sidebar Toggle -->
 <script>
-  $(document).ready(function() {
-    $('#navigation-toggle').on("click", function(e) {
-      $('#sidebar-open').toggleClass('hide');
-      $('#sidebar-close').toggleClass('hide');
-      $('body').toggleClass('sidebar-toggle');
-    });
-  });
+  	$(document).ready(function() {
+    	$('#hamburger-open').on("click", function(e) {
+      		$('#sidebar-open').toggleClass('hide');
+      		$('#sidebar-close').toggleClass('hide');
+      		$('#hamburger-open').toggleClass('hide');
+      		$('#hamburger-close').toggleClass('hide');
+      		$('body').toggleClass('sidebar-toggle');
+      		document.cookie = "sidebar=close";
+    	});
+  	});
+
+  	$(document).ready(function() {
+    	$('#hamburger-close').on("click", function(e) {
+      		$('#sidebar-open').toggleClass('hide');
+      		$('#sidebar-close').toggleClass('hide');
+      		$('#hamburger-open').toggleClass('hide');
+      		$('#hamburger-close').toggleClass('hide');
+      		$('body').toggleClass('sidebar-toggle');
+      		document.cookie = "sidebar=open";
+    	});
+  	});
+  	function getCookie(cname) {
+	    var name = cname + "=";
+	    var ca = document.cookie.split(';');
+	    for(var i=0; i<ca.length; i++) {
+	        var c = ca[i];
+	        while (c.charAt(0)==' ') c = c.substring(1);
+	        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+	    }
+	    return "";
+	}
+	$(document).ready(function(){
+	    if (getCookie("sidebar")=="close") {
+	    	$('#hamburger-close').click();
+	    	document.cookie = "sidebar=close";
+	    }    
+	});
 </script>
 
 
