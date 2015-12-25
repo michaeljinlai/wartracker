@@ -3,19 +3,19 @@
 <?php 
 	if (!empty($_POST)) {
 		$query = "
-			UPDATE 
-				clan 
-			SET 
+			UPDATE
+				clan
+			SET
 				clan_name = :clan_name,
-				clan_tag = :clan_tag	
-			WHERE 
-				id = :id,
+				clan_tag = :clan_tag
+			WHERE
+				user_id = :user_id
 		";
 
 		$query_params = array(
 			':clan_name' => $_POST['clan_name'],
 			':clan_tag' => $_POST['clan_tag'],
-			':id' => $_SESSION['user']['id']
+			':user_id' => $_SESSION['user']['id']
 		);
 
         try {
@@ -34,6 +34,7 @@
 <form action="clan" method="post">
 	<input type="text" name="clan_name"></input>
 	<input type="text" name="clan_tag"></input>
+	<input type="submit"></input>
 </form>
 
 <?php require($_SERVER['DOCUMENT_ROOT']."/wartracker/templatestop.php"); ?>
