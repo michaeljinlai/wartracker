@@ -1,5 +1,6 @@
 <?php 
-    require($_SERVER['DOCUMENT_ROOT']."/clashofclans/database.php"); 
+
+    require($_SERVER['DOCUMENT_ROOT']."/wartracker/database.php"); 
      
     // This variable will be used to re-display the user's username to them in the 
     // login form if they fail to enter the correct password.  It is initialized here 
@@ -84,16 +85,8 @@
             // the user's details. 
             $_SESSION['user'] = $row; 
             
-            if($_SESSION['user']['privilege'] === 'administrator') {
-	            // Redirect the user if they are an administrator.  <-- need to add field to users table for administrator 
-	            header("Location: dashboard"); 
-	            die("Redirecting to: dashboard"); 
-            }
-            else {
-	            // Redirect the user if they are a normal user. 
-	            header("Location: dashboard"); 
-	            die("Redirecting to: dashboard"); 
-            }
+			header("Location: dashboard"); 
+			die("Redirecting to: daashboard"); 
         } 
         else { 
             // Tell the user they failed 
