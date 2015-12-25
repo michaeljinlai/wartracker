@@ -1,10 +1,40 @@
 <?php require($_SERVER['DOCUMENT_ROOT']."/wartracker/templatestart.php"); ?>
 
 <?php 
-	preg_match("/[^\/]+$/", $_SERVER['REQUEST_URI'], $matches);
-	$last_word = $matches[0]; // test 
-	echo $last_word;
+	if (!empty($_POST)) {
+		$query = "
+			UPDATE 
+				clan 
+			SET 
+				clan_name = :clan_name,
+				clan_tag = :clan_tag	
+			WHERE 
+				id = :id,
+		";
+
+		$query_params = array(
+			':clan_name' => $_POST['clan_name'],
+			':clan_tag' => $_POST['clan_tag'],
+			':id' => $_SESSION['user']['id']
+		);
+
+        try {
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params); 
+        } 
+        catch(PDOException $ex) {  
+            die("Failed to run query: " . $ex->getMessage()); 
+        }
+
+        header('Location: clan');
+        die();
+	}
 ?>
+
+<form action="clan" method="post">
+	<input type="text" name="clan_name"></input>
+	<input type="text" name="clan_tag"></input>
+</form>
 
 <?php require($_SERVER['DOCUMENT_ROOT']."/wartracker/templatestop.php"); ?>
 
