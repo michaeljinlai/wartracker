@@ -32,7 +32,7 @@
             die("Failed to run query: " . $ex->getMessage()); 
         }
 
-        header('Location: member');
+        header('Location: members');
         die();
 	}
 
@@ -49,7 +49,7 @@
 	}
 ?>
 
-<form action="member" method="post">
+<form action="members" method="post">
 	<input type="text" name="name"></input>
 	<input type="submit"></input>
 </form>
