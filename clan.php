@@ -29,6 +29,15 @@
         header('Location: clan');
         die();
 	}
+
+	$query = "SELECT clan_name, clan_tag FROM clan WHERE user_id = :user_id";
+	$query_params = array(':user_id'=>$_SESSION['user']['id']);
+	$stmt = $db->prepare($query);
+	$stmt->execute($query_params);
+	$row = $stmt->fetch();
+	echo 'Clan Name: '.$row['clan_name']; 
+	echo '<br>';
+	echo 'Clan Tag: '.$row['clan_tag'];
 ?>
 
 <form action="clan" method="post">
@@ -36,6 +45,8 @@
 	<input type="text" name="clan_tag"></input>
 	<input type="submit"></input>
 </form>
+
+
 
 <?php require($_SERVER['DOCUMENT_ROOT']."/wartracker/templatestop.php"); ?>
 
