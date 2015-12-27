@@ -30,15 +30,15 @@
     <title>Dashboard Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://localhost/wartracker/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="http://localhost/wartracker/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/fonts.css" rel="stylesheet">
-    <link href="css/custom.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://localhost/wartracker/css/fonts.css" rel="stylesheet">
+    <link href="http://localhost/wartracker/css/custom.css" rel="stylesheet">
+    <link href="http://localhost/wartracker/css/font-awesome.min.css" rel="stylesheet">
   </head>
 
   <body>
