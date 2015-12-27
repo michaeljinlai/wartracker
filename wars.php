@@ -49,6 +49,7 @@
 	$row = $stmt->fetchAll();
 	foreach ($row as $war) {
 		echo '<a href="war/'.$war['id'].'" class="btn btn-primary">View</a><br>'; 
+		echo '<a href="war/edit/'.$war['id'].'" class="btn btn-primary">Edit</a><br>'; 
 		echo 'Clan ID: '.$war['clan_id']; 
 		echo '<br>';
 		echo 'Clan Enemy Clan: '.$war['enemy_clan'];

@@ -14,9 +14,14 @@
 	$stmt->execute($query_params);
 	$row = $stmt->fetch();
 	echo $row['clan_id'];
+	echo '<br>';
 	echo $row['enemy_clan'];
+	echo '<br>';
 	echo $row['size'];
+	echo '<br>';
 	echo $row['comments'];
+	echo '<br>';
+	echo '<br>';
 ?>
 
 <?php require($_SERVER['DOCUMENT_ROOT']."/wartracker/templatestop.php"); ?>
