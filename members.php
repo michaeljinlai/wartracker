@@ -41,10 +41,10 @@
 	$stmt = $db->prepare($query);
 	$stmt->execute($query_params);
 	$row = $stmt->fetchAll();
-	foreach ($row as $wut) {
-		echo 'Clan ID: '.$wut['clan_id']; 
+	foreach ($row as $member) {
+		echo 'Clan ID: '.$member['clan_id']; 
 		echo '<br>';
-		echo 'Clan Member Name: '.$wut['name'];
+		echo 'Clan Member Name: '.$member['name'];
 		echo '<br>';
 	}
 ?>
@@ -53,8 +53,6 @@
 	<input type="text" name="name"></input>
 	<input type="submit"></input>
 </form>
-
-
 
 <?php require($_SERVER['DOCUMENT_ROOT']."/wartracker/templatestop.php"); ?>
 
