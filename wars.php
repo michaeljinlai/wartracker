@@ -42,12 +42,13 @@
         die();
 	}
 
-	$query = "SELECT clan_id, enemy_clan, size, comments FROM war WHERE clan_id = :clan_id";
+	$query = "SELECT id, clan_id, enemy_clan, size, comments FROM war WHERE clan_id = :clan_id";
 	$query_params = array(':clan_id'=>$clan_id);
 	$stmt = $db->prepare($query);
 	$stmt->execute($query_params);
 	$row = $stmt->fetchAll();
 	foreach ($row as $war) {
+		echo '<a href="war/'.$war['id'].'" class="btn btn-primary">View</a><br>'; 
 		echo 'Clan ID: '.$war['clan_id']; 
 		echo '<br>';
 		echo 'Clan Enemy Clan: '.$war['enemy_clan'];
@@ -55,6 +56,7 @@
 		echo 'Size: '.$war['size'];
 		echo '<br>';
 		echo 'Comments: '.$war['comments'];
+		echo '<br>';
 		echo '<br>';
 	}
 ?>
