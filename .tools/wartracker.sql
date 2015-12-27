@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2015 at 08:16 PM
+-- Generation Time: Dec 27, 2015 at 06:40 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `clan` (
 --
 
 INSERT INTO `clan` (`id`, `user_id`, `clan_name`, `clan_tag`) VALUES
-(5, 19, 'asda', 'asd');
+(5, 19, 'gay', 'gay');
 
 -- --------------------------------------------------------
 
@@ -54,7 +54,20 @@ CREATE TABLE IF NOT EXISTS `member` (
   `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`),
   KEY `clan_id` (`clan_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `member`
+--
+
+INSERT INTO `member` (`id`, `clan_id`, `name`) VALUES
+(1, 5, 'asd'),
+(2, 5, 'a'),
+(3, 5, 'w'),
+(4, 5, 'q'),
+(5, 5, 'aa'),
+(6, 5, 'aaa'),
+(7, 5, 'khjasdkhjakahjsd');
 
 -- --------------------------------------------------------
 
@@ -80,6 +93,20 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `salt`, `privilege`, `email`) VALUES
 (19, 'keiwo', 'd9851e7ad31ea0a63c9edd48a9566802c97d733266a2957065f2fdd611271120', '4a83e25a1588667a', 'user', 'i_like_something@hotmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `war`
+--
+
+CREATE TABLE IF NOT EXISTS `war` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `enemy_clan` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `size` int(5) NOT NULL,
+  `comments` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 --
 -- Constraints for dumped tables
