@@ -39,6 +39,7 @@
         } 
 
         if ($valid) {
+        	// Begin insert into roster table
 			$query = " 
 			    INSERT INTO roster (
 			    	war_id,
@@ -52,6 +53,60 @@
 			$query_params = array(
 				':war_id' => $war_id,
 				':member_id' => $_POST['member_id']
+			);
+
+	        try {
+	            $stmt = $db->prepare($query); 
+	            $result = $stmt->execute($query_params); 
+	        } 
+	        catch(PDOException $ex) {  
+	            die("Failed to run query: " . $ex->getMessage()); 
+	        }
+
+	        // Begin insert into attacks table #1
+	        $query = " 
+		    INSERT INTO attack (
+		    	war_id,
+		    	member_id,
+		    	attack_number
+		    ) VALUES (
+		        :war_id,
+		        :member_id,
+		        :attack_number
+		    )
+			"; 
+
+			$query_params = array(
+				':war_id' => $war_id,
+				':member_id' => $_POST['member_id'],
+				':attack_number' => 1
+			);
+
+	        try {
+	            $stmt = $db->prepare($query); 
+	            $result = $stmt->execute($query_params); 
+	        } 
+	        catch(PDOException $ex) {  
+	            die("Failed to run query: " . $ex->getMessage()); 
+	        }
+
+	        // Begin insert into attacks table #2
+	        $query = " 
+		    INSERT INTO attack (
+		    	war_id,
+		    	member_id,
+		    	attack_number
+		    ) VALUES (
+		        :war_id,
+		        :member_id,
+		        :attack_number
+		    )
+			"; 
+
+			$query_params = array(
+				':war_id' => $war_id,
+				':member_id' => $_POST['member_id'],
+				':attack_number' => 2
 			);
 
 	        try {
