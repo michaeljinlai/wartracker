@@ -81,8 +81,19 @@
 	}
 ?>
 
+<?php 
+	$query = "SELECT id FROM member";
+	$stmt = $db->prepare($query);
+	$stmt->execute();
+	$member_id_list = $stmt->fetchAll();
+?>
+
 <form action="" method="post">
-	Member ID<input type="text" name="member_id"></input>
+	<select name="member_id" >
+		<?php foreach ($member_id_list as $member) : ?>
+	    	<option value="<?php echo $member['id']; ?>"><?php echo $member['id'] ?></option>
+	    <?php endforeach; ?>	
+	</select>
 	<input type="submit"></input>
 </form>
 
