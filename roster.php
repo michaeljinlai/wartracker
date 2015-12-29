@@ -62,7 +62,7 @@
 	            die("Failed to run query: " . $ex->getMessage()); 
 	        }
 
-	        header('Location: http://localhost/wartracker/war/roster/'.$war_id);
+	        header('Location: http://localhost/wartracker/war/'.$war_id.'/roster');
 	        die();
     	}
 	}
