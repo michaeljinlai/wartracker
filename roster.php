@@ -3,6 +3,7 @@
 <?php
 	$valid = true;
 	$war_id = NULL;
+	$current_roster = array();
 
 	if (!empty($_GET['war_id'])) {
 		$war_id = $_GET['war_id'];
@@ -73,6 +74,7 @@
 	$stmt->execute($query_params);
 	$rows = $stmt->fetchAll();
 	foreach ($rows as $roster) {
+		array_push($current_roster, $roster['member_id']);
 		echo 'War ID: '.$roster['war_id'];
 		echo '<br>';
 		echo 'Member ID: '.$roster['member_id'];
@@ -91,7 +93,9 @@
 <form action="" method="post">
 	<select name="member_id" >
 		<?php foreach ($member_id_list as $member) : ?>
-	    	<option value="<?php echo $member['id']; ?>"><?php echo $member['id'] ?></option>
+			<?php if (!in_array($member['id'], $current_roster)) : ?>
+	    		<option value="<?php echo $member['id']; ?>"><?php echo $member['id'] ?></option>
+	    	<?php endif; ?>	
 	    <?php endforeach; ?>	
 	</select>
 	<input type="submit"></input>
