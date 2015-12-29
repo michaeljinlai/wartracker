@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 28, 2015 at 06:28 AM
+-- Generation Time: Dec 29, 2015 at 09:15 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -30,6 +30,8 @@ CREATE TABLE IF NOT EXISTS `attack` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `war_id` int(11) NOT NULL,
   `member_id` int(11) NOT NULL,
+  `attack_number` int(1) NOT NULL,
+  `damage` int(3) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `member_id` (`member_id`),
   KEY `war_id` (`war_id`)
@@ -69,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `member` (
   `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`),
   KEY `clan_id` (`clan_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
 
 --
 -- Dumping data for table `member`
@@ -83,7 +85,15 @@ INSERT INTO `member` (`id`, `clan_id`, `name`) VALUES
 (5, 5, 'aa'),
 (6, 5, 'aaa'),
 (7, 5, 'khjasdkhjakahjsd'),
-(8, 5, 'aaaaaaa');
+(8, 5, 'aaaaaaa'),
+(9, 5, '1'),
+(10, 5, '2'),
+(11, 5, '3'),
+(12, 5, '4'),
+(13, 5, '5'),
+(14, 5, '6'),
+(15, 5, '7'),
+(16, 5, '8');
 
 -- --------------------------------------------------------
 
@@ -98,7 +108,27 @@ CREATE TABLE IF NOT EXISTS `roster` (
   PRIMARY KEY (`id`),
   KEY `war_id` (`war_id`),
   KEY `member_id` (`member_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=19 ;
+
+--
+-- Dumping data for table `roster`
+--
+
+INSERT INTO `roster` (`id`, `war_id`, `member_id`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(4, 2, 2),
+(5, 2, 1),
+(7, 1, 3),
+(8, 2, 3),
+(9, 2, 5),
+(10, 2, 4),
+(12, 2, 16),
+(14, 2, 14),
+(15, 2, 15),
+(16, 2, 6),
+(17, 2, 12),
+(18, 2, 7);
 
 -- --------------------------------------------------------
 
