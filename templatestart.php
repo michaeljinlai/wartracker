@@ -45,20 +45,20 @@
 
     <div class="col-sm-3 col-md-2 sidebar" id="sidebar-open">
       <ul class="nav nav-sidebar">
-        <li class="<?php locationChecker('dashboard'); ?>"><a href="dashboard">Dashboard</a></li>
-        <li class="<?php locationChecker('clan'); ?>"><a href="clan">Clan</a></li>
-        <li class="<?php locationChecker('members'); ?>"><a href="members">Members</a></li>
-        <li class="<?php locationChecker('wars'); ?>"><a href="wars">Wars</a></li>
+        <li class="<?php locationChecker('dashboard'); ?>"><a href="http://localhost/wartracker/dashboard">Dashboard</a></li>
+        <li class="<?php locationChecker('clan'); ?>"><a href="http://localhost/wartracker/clan">Clan</a></li>
+        <li class="<?php locationChecker('members'); ?>"><a href="http://localhost/wartracker/members">Members</a></li>
+        <li class="<?php locationChecker('wars'); ?>"><a href="http://localhost/wartracker/wars">Wars</a></li>
         <li><a href="logout">Logout</a></li>
       </ul>
     </div>
 
     <div class="col-sm-3 col-md-2 sidebar hide" id="sidebar-close">
       <ul class="nav nav-sidebar">
-        <li class="<?php locationChecker('dashboard'); ?>"><a href="dashboard">Dashboard</a></li>
-        <li class="<?php locationChecker('clan'); ?>"><a href="clan">Clan</a></li>
-        <li class="<?php locationChecker('members'); ?>"><a href="members">Members</a></li>
-        <li class="<?php locationChecker('wars'); ?>"><a href="wars">Wars</a></li>
+        <li class="<?php locationChecker('dashboard'); ?>"><a href="http://localhost/wartracker/dashboard">Dashboard</a></li>
+        <li class="<?php locationChecker('clan'); ?>"><a href="http://localhost/wartracker/clan">Clan</a></li>
+        <li class="<?php locationChecker('members'); ?>"><a href="http://localhost/wartracker/members">Members</a></li>
+        <li class="<?php locationChecker('wars'); ?>"><a href="http://localhost/wartracker/wars">Wars</a></li>
         <li><a href="logout">Logout</a></li>
       </ul>
     </div>

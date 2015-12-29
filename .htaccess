@@ -8,3 +8,4 @@ Options +FollowSymLinks
 
 RewriteRule ^war/([0-9-_]+)/?$ war_view.php?id=$1 [NC,L]
 RewriteRule ^war/edit/([0-9-_]+)/?$ war_edit.php?id=$1 [NC,L]
+RewriteRule ^war/roster/([0-9-_]+)/?$ roster.php?war_id=$1 [NC,L]
