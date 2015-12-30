@@ -41,8 +41,8 @@
 ?>
 
 <form action="clan" method="post">
-	<input type="text" name="clan_name"></input>
-	<input type="text" name="clan_tag"></input>
+	<input type="text" name="clan_name" value="<?php echo $row['clan_name']; ?>"></input>
+	<input type="text" name="clan_tag" value="<?php echo $row['clan_tag']; ?>"></input>
 	<input type="submit"></input>
 </form>
 
