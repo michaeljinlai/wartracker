@@ -49,7 +49,7 @@
         <li class="<?php locationChecker('clan'); ?>"><a href="http://localhost/wartracker/clan">Clan</a></li>
         <li class="<?php locationChecker('members'); ?>"><a href="http://localhost/wartracker/members">Members</a></li>
         <li class="<?php locationChecker('wars'); ?>"><a href="http://localhost/wartracker/wars">Wars</a></li>
-        <li><a href="logout">Logout</a></li>
+        <li><a href="/wartracker/logout">Logout</a></li>
       </ul>
     </div>
 
@@ -59,7 +59,7 @@
         <li class="<?php locationChecker('clan'); ?>"><a href="http://localhost/wartracker/clan">Clan</a></li>
         <li class="<?php locationChecker('members'); ?>"><a href="http://localhost/wartracker/members">Members</a></li>
         <li class="<?php locationChecker('wars'); ?>"><a href="http://localhost/wartracker/wars">Wars</a></li>
-        <li><a href="logout">Logout</a></li>
+        <li><a href="/wartracker/logout">Logout</a></li>
       </ul>
     </div>
 
