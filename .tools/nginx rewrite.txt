@@ -1,0 +1,15 @@
+location / {
+    root   G:/wamp/www;
+    index  index.php index.html index.htm;
+    rewrite ^/clashofclans/login?$ /clashofclans/login.php last;
+    rewrite ^/wartracker/login?$ /wartracker/login.php last;
+    rewrite ^/wartracker/dashboard?$ /wartracker/dashboard.php last;
+    rewrite ^/wartracker/clan?$ /wartracker/clan.php last;
+    rewrite ^/wartracker/members?$ /wartracker/members.php last;
+    rewrite ^/wartracker/logout?$ /wartracker/logout.php last;
+    rewrite ^/wartracker/wars?$ /wartracker/wars.php last;
+    rewrite ^/wartracker/war/([0-9]+)$ /wartracker/war_view.php?id=$1 last;
+    rewrite ^/wartracker/war/edit/([0-9]+)$ /wartracker/war_edit.php?id=$1 last;
+    rewrite ^/wartracker/war/([0-9]+)/roster$ /wartracker/roster.php?war_id=$1 last;
+    rewrite ^/wartracker/war/([0-9]+)/attacks$ /wartracker/attacks.php?war_id=$1 last;
+}
