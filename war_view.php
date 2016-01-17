@@ -1,11 +1,14 @@
-<?php require($_SERVER['DOCUMENT_ROOT']."/wartracker/templatestart.php"); ?>
-
 <?php
+	
+	require($_SERVER['DOCUMENT_ROOT']."/wartracker/database.php");
+
 	$war_id = NULL;
 
 	if (!empty($_GET['id'])) {
 		$war_id = $_GET['id'];
 	}
+
+	require($_SERVER['DOCUMENT_ROOT']."/wartracker/templatestart.php");
 
 	$query = "SELECT id, clan_id, enemy_clan, size, comments FROM war WHERE id = :war_id";
 

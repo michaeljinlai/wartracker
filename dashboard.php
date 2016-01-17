@@ -1,4 +1,7 @@
-<?php require($_SERVER['DOCUMENT_ROOT']."/wartracker/templatestart.php"); ?>
+<?php 
+	require($_SERVER['DOCUMENT_ROOT']."/wartracker/database.php");
+	require($_SERVER['DOCUMENT_ROOT']."/wartracker/templatestart.php"); 
+?>
 
 	<h1 class="page-header">Dashboard</h1>
 

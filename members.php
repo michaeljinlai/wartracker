@@ -1,6 +1,7 @@
-<?php require($_SERVER['DOCUMENT_ROOT']."/wartracker/templatestart.php"); ?>
-
 <?php 
+	
+	require($_SERVER['DOCUMENT_ROOT']."/wartracker/database.php");
+
 	$query = "SELECT id FROM clan WHERE user_id = :user_id";
 	$query_params = array(':user_id' => $_SESSION['user']['id']);
 	$stmt = $db->prepare($query);
@@ -35,6 +36,8 @@
         header('Location: members');
         die();
 	}
+
+	require($_SERVER['DOCUMENT_ROOT']."/wartracker/templatestart.php");
 
 	$query = "SELECT clan_id, name FROM member WHERE clan_id = :clan_id";
 	$query_params = array(':clan_id'=>$clan_id);

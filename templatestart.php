@@ -1,5 +1,3 @@
-<?php require($_SERVER['DOCUMENT_ROOT']."/wartracker/database.php"); ?>
-
 <?php 
     if(empty($_SESSION['user'])) 
     { 

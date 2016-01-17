@@ -1,6 +1,7 @@
-<?php require($_SERVER['DOCUMENT_ROOT']."/wartracker/templatestart.php"); ?>
-
 <?php 
+
+	require($_SERVER['DOCUMENT_ROOT']."/wartracker/database.php");
+
 	if (!empty($_POST)) {
 		$query = "
 			UPDATE
@@ -29,6 +30,8 @@
         header('Location: clan');
         die();
 	}
+
+	require($_SERVER['DOCUMENT_ROOT']."/wartracker/templatestart.php");
 
 	$query = "SELECT clan_name, clan_tag FROM clan WHERE user_id = :user_id";
 	$query_params = array(':user_id'=>$_SESSION['user']['id']);

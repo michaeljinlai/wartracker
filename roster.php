@@ -1,6 +1,7 @@
-<?php require($_SERVER['DOCUMENT_ROOT']."/wartracker/templatestart.php"); ?>
-
 <?php
+
+	require($_SERVER['DOCUMENT_ROOT']."/wartracker/database.php");
+
 	$valid = true;
 	$war_id = NULL;
 	$current_roster = array();
@@ -121,6 +122,8 @@
 	        die();
     	}
 	}
+
+	require($_SERVER['DOCUMENT_ROOT']."/wartracker/templatestart.php");
 
 	$query = "SELECT war_id, member_id FROM roster WHERE war_id = :war_id";
 
